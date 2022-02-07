@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -27,7 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.products.create');
     }
 
     /**
@@ -38,7 +39,50 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        dump($data);
+
+        $new_product = new Product();
+
+
+        // SLUG
+
+        $slug = Str::slug($data['name'], '-');
+        $count = 1;
+        $base_slug = $slug;
+
+        while(Product::where('slug', $slug)->first()) {
+            $slug = $base_slug . '-' . $count;
+        }
+
+        $data['slug'] = $slug;
+
+        // CALCULATE PRICE
+
+        
+
+        
+
+        $data['price_per_kg'] = floatval($data['price_per_kg']);
+        $data['weight'] = floatval($data['weight']);
+
+        $price = $data['price_per_kg'] / $data['weight'];
+
+        $data['price'] = $price;
+ 
+        
+
+        $new_product->fill($data);
+
+        $new_product->save();
+
+        return redirect()->route('admin.home');
+
+        
+
+
+
     }
 
     /**

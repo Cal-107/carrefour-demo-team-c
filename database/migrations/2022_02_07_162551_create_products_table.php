@@ -19,7 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('brand');
             $table->text('description');
             $table->unsignedDecimal('weight', $precision = 5, $scale = 2);
-            $table->unsignedDecimal('price_per_kg', $precision = 5, $scale = 2);   
+            $table->unsignedDecimal('price_per_kg', $precision = 5, $scale = 2);
+            $table->unsignedDecimal('price', $precision = 5, $scale = 2);
             $table->string('slug')->unique();
             $table->timestamps();
         });

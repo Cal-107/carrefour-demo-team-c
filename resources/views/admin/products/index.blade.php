@@ -25,7 +25,7 @@
                 @foreach ($products as $product)
                     <tr>
                         <td class="text-center">{{ $product->id }}</td>
-                        <td class="text-center">{{ $product->title }}</td>
+                        <td class="text-center">{{ $product->name }}</td>
                         {{-- <td>
                             @if ($product->category)
                                 <a href="{{ route('admin.category', $product->category->id) }}"> 

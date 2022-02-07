@@ -131,6 +131,6 @@ class ProductController extends Controller
         
         $product->delete();
 
-        return redirect()->route('admin.products.index')->with('deleted', $product->title);
+        return redirect()->route('admin.products.index')->with('deleted', $product->name);
     }
 }

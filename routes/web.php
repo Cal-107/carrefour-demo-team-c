@@ -22,6 +22,9 @@ Route::middleware('auth')
     ->group(function() {
         // admin hompage
         Route::get('/', 'HomeController@index')->name('home');
+
+        Route::resource('/categories', 'CategoryController');
+
     });
 
 

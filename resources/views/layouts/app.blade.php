@@ -34,7 +34,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.categories.create')}}">Crea una categoria</a>
+                            <a class="nav-link 
+                            @if (Request::route()->getName() == 'admin.posts.index') active
+                            @endif" 
+                            href="{{ route('admin.products.index') }}">Our Products</a>
                         </li>
                     </ul>
 

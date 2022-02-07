@@ -22,6 +22,9 @@ Route::middleware('auth')
     ->group(function() {
         // admin homepage
         Route::get('/', 'HomeController@index')->name('home');
+
+        // Product resource route
+        Route::resource('/products', 'ProductController');
     });
 
 

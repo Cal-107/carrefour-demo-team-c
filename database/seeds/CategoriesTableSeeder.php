@@ -15,7 +15,8 @@ class CategoriesTableSeeder extends Seeder
     {
         $new_category = new Category();
         $new_category->category_name = 'Enoteca';
-        $new_category->slug = Str::slug($new_category->category_name , '-');
+        $new_category->slug = Str::slug($new_category->category_name, '-');
+
         $new_category->img = 'text';
         $new_category->save();
     }

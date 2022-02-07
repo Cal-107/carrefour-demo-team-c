@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Auth;
 */
 Auth::routes();
 
-Route::get('/', function () {
-    return view('guests.home');
-});
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware('auth')
     ->namespace('Admin')
@@ -25,7 +22,6 @@ Route::middleware('auth')
     ->group(function() {
         // admin hompage
         Route::get('/', 'HomeController@index')->name('home');
-
     });
 
 

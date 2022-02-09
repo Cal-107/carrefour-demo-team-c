@@ -33,7 +33,7 @@
             </div>
 
             <button class="btn btn-primary" type="submit">
-                Upadate Categories
+                Upadate Category
             </button>
         </form>
     </div>

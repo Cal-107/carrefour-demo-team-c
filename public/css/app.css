@@ -82,6 +82,27 @@ header .headerNavRight li a {
 header .headerNavRight li a:hover {
   color: #0970e6;
 }
+header a {
+  color: black;
+  text-decoration: none;
+}
+header .header-logo a img {
+  width: 200px;
+}
+header .search-bar-container {
+  max-width: 836px;
+  width: 50%;
+}
+header .search-bar-container .searchForm {
+  max-width: 100%;
+}
+header .search-bar-container .searchForm .SearchBar {
+  width: 80%;
+  padding: 7px 15px 7px 25px;
+  color: #929292;
+  border: 1px solid #d2d2d2;
+  border-radius: 50px;
+}
 
 footer {
   border-top: 2px solid #748293;
@@ -114,9 +135,12 @@ footer .service .shipping ul {
   display: flex;
   flex-wrap: wrap;
 }
+<<<<<<< HEAD
+=======
 footer .service .shipping ul li {
   width: 100%;
 
+>>>>>>> 331411a27fe17379b17ffb252b191a38fd0800d7
 footer .service .shipping ul li a {
   text-decoration: none;
 }
@@ -149,8 +173,11 @@ footer .asset-content .asset-container ul {
   list-style-type: none;
   justify-content: space-between;
   padding: 0;
+<<<<<<< HEAD
+=======
   margin-bottom: 0;
   align-items: baseline;
+>>>>>>> 331411a27fe17379b17ffb252b191a38fd0800d7
 }
 footer .asset-content .asset-container ul li {
   text-decoration: none;
@@ -160,6 +187,11 @@ footer .asset-content .asset-container ul li a {
 }
 footer .asset-content .asset-container ul li a img {
   width: 30px;
+<<<<<<< HEAD
+}
+footer .asset-content .asset-container ul li a h4 {
+  text-transform: uppercase;
+=======
   margin-right: 15px;
 }
 footer .asset-content .asset-container ul li a h6 {
@@ -168,4 +200,5 @@ footer .asset-content .asset-container ul li a h6 {
   display: flex;
   align-items: center;
   color: #0e3368;
+>>>>>>> 331411a27fe17379b17ffb252b191a38fd0800d7
 }

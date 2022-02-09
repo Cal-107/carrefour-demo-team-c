@@ -110,4 +110,86 @@ footer{
         }
         
     }
+
+    .social-content{
+        background: #1b3d79;
+
+
+        .social-container{
+            width: 1460px;
+
+            .icon{
+                ul{
+                    list-style-type: none;
+                    margin-bottom: 0;
+                    li{
+                        img{
+                            width: 30px;
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .link-contact{
+        border-bottom: 1px solid #e8e8e8;
+        .link-contact-container{
+            width: 1460px;
+
+            .links{
+                padding-left:0;
+                ul{
+                    list-style-type: none;
+                    padding-left: 0;
+                    padding-right: 0;
+                    li{
+                        margin-bottom: 20px;
+                        p{
+                            margin-bottom: 0;
+                            font-size: 20px;
+                            color: #39578b;
+                        }
+                        a{
+                            text-decoration: none;
+                            color: #6c6c6c;
+                            display: inherit;
+                        }
+                    }
+                }
+            }
+            .contacts{
+                padding-left:0;
+            }
+        }
+    }
+    .payment-methods{
+        
+        h6{
+            text-transform: uppercase;
+            color: #3d5a8c;
+        }
+        .methods{
+            ul{
+                list-style-type: none;
+                li {
+                    img{
+                        margin-left: 15px;
+                    }
+                    .Visa{
+                        width: 50px;
+                    }
+                    .Mastercard{
+                        width: 36px;
+                    }
+                    .American-Express{
+                        width: 25px;
+                    }
+                    .PayPal{
+                        width: 57px;
+                    }
+                }
+            }
+        }
+    }
 }

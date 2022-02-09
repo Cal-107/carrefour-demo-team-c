@@ -98,4 +98,147 @@
             </ul>
         </div>
     </div>
+    <div class="social-content py-3 d-flex justify-content-center">
+        <div class="social-container">
+            <div class="icon">
+                <ul class="d-flex justify-content-end">
+                    <li class="text-white d-flex align-items-center"><strong># resta connesso</strong></li>
+                    <li>
+                        <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dwa6a3c2ce/facebook.svg" alt="Facebook">
+                    </li>
+                    <li>
+                        <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dwdf5d1830/twitter.svg" alt="Twitter">
+                    </li>
+                    <li>
+                        <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dw6ff28176/instagram.svg" alt="Instagram">
+                    </li>
+                    <li>
+                        <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dwff0d491e/youtube.svg" alt="You Tube">
+                    </li>
+                    <li>
+                        <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dwed60eaff/linkedin.svg" alt="Linkedin">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="link-contact d-flex justify-content-center py-4">
+        <div class="link-contact-container d-flex">
+            <div class="links col-8 d-flex">
+                <div class="col-4">
+                    <ul>
+                        <li>
+                            <p>I nostri valori</p>
+                            <a href="#">I nostri valori</a>
+                        </li>
+                        <li>
+                            <p>Nel mondo</p>
+                            <a href="#">www.carrefour.com</a>
+                        </li>
+                        <li>
+                            <p>In Italia</p>
+                            <a href="#">Azienda</a>
+                            <a href="#">Ufficio Stampa</a>
+                            <a href="#">Lavora con noi</a>
+                            <a href="#">Franchising</a>
+                        </li>
+                        <li>
+                            <p>Servizi</p>
+                            <a href="#">Carta SpesAmica PAYBACK</a>
+                            <a href="#">Gift card</a>
+                            <a href="#">Servizi Findomestic</a>
+                            <a href="#">Carrefour Salute</a>
+                            <a href="#">Carrefour Viaggi</a>
+                            <a href="#">Carrefour Foto</a>
+                            <a href="#">Richiamo prodotti</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <ul>
+                        <li>
+                            <p>Area legale</p>
+                            <a href="#">Dati societari</a>
+                            <a href="#">Tutela dei dati personali</a>
+                            <a href="#">Garanzia legale di conformità</a>
+                            <a href="#">Condizioni generali</a>
+                            <a href="#">Condizioni generali di vendita</a>
+                            <a href="#">Carta etica per i nostri fornitori</a>
+                            <a href="#">Carta di impegno di Responsabilità </a>
+                            <a href="#">Sociale d'Impresa</a>
+                            <a href="#">Modelli Organizzativi</a>
+                            <a href="#">Informativa Cookie</a>
+                            <a href="#">Gestisci preferenze cookie</a>
+                        </li>
+                        <li>
+                        <p>Acquisti Online</p>
+                            <a href="#">Spesa veloce by Carrefour NOW</a>
+                            <a href="#">Spesa Online</a>
+                            <a href="#">Elettronica e Casa</a>
+                            <a href="#">Offerte Online</a>
+                            <a href="#">Abbonamento Carrefour Club</a>
+                            <a href="#">Pagamento tramite Gift Card</a>
+                            <a href="#">Soglie spese di spedizione</a>
+                            <a href="#">Novità servizi spesa online </a>
+                            <a href="#">App Carrefour</a>
+                            <a href="#">Tutti i servizi online</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <ul>
+                        <li>
+                            <p>Agevolazioni</p>
+                            <a href="#">Donne in Gravidanza e Neogenitori</a>
+                            <a href="#">Over 60</a>
+                            <a href="#">Diversamente Abili</a>
+                            <a href="#">Regolamento agevolazioni</a>
+                        </li>
+                        <li>
+                            <p>Speciali del momento</p>
+                            <a href="#">Dati societari</a>
+                            <a href="#">Le Nostre Proposte di Elettronica e Casa</a>
+                            <a href="#">San Valentino 2022</a>
+                            <a href="#">Prodotti Biologici Online</a>
+                            <a href="#">Prodotti Senza Glutine</a>
+                            <a href="#">Prodotti Senza Lattosio</a>
+                            <a href="#">Prodotti Vegani</a>
+                            <a href="#">Prodotti Vegetariani</a>
+                            <a href="#">Prodotti Proteici</a>
+                            <a href="#">Prodotti Senza Zucchero</a>
+                            <a href="#">Vini Consigliati</a>
+                            <a href="#">Giocattoli Online</a>
+                            <a href="#">Elettrodomestici Samsung</a>
+                            <a href="#">Smart Tv e Televisori</a>
+                            <a href="#">Smartphone e Cellulari</a>
+                            <a href="#">Tutti gli Speciali del Momento</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contacts col-4"> hello</div>
+        </div>
+    </div>
+    <div class="payment-methods d-flex justify-content-center py-3">
+        <div class="content">
+            <h6 class= "text-center">metodi di pagamento</h6>
+            <div class="methods">
+                <ul class="d-flex justify-content-between">
+                    <li>
+                        <img class="Visa" src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dw28e62a2c/footer-payments/visa.svg" alt="Visa">
+                    </li>
+                    <li>
+                        <img class="Mastercard" src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dwc4067d9e/footer-payments/mastercard.svg" alt="Mastercard">
+                    </li>
+                    <li>
+                        <img class="American-Express" src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dw6e1ce8bc/footer-payments/american_express.svg" alt="American Express">
+                    </li>
+                    <li>
+                        <img class="PayPal" src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dwd6b188a7/footer-payments/paypal.svg" alt="PayPal">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>

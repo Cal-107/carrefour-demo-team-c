@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use Illuminate\Support\Str;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\category;
+use App\Category;
 
 class CategoryController extends Controller
 {
@@ -16,7 +17,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        
+        $categories = Category::all();
+
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -26,7 +29,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -37,7 +40,33 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate($this->validation_rules(), $this->validation_message());
+
+        $data = $request->all();
+        
+        $new_category = new Category();
+
+        //creazione di slug univoco
+        $slug = Str::slug($data['category_name'], '-');
+        $count = 1;
+        $slug_base = $slug;
+
+        while(Category::where('slug', $slug)->first()) {
+            $slug = $slug_base . '-' . $count;
+            $count++;
+        }
+
+
+        //assegnamo lo slug univoco
+        $data['slug'] = $slug;
+
+        //associamo i dati
+        $new_category->fill($data);
+
+        //salviamo i dati
+        $new_category->save();
+
+        return redirect()->route('admin.categories.show', $new_category->slug);
     }
 
     /**
@@ -48,7 +77,9 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        return 'show ok';
+        $category = Category::find($id);
+
+        return view('admin.categories.show', compact('category') );
     }
 
     /**
@@ -84,4 +115,25 @@ class CategoryController extends Controller
     {
         //
     }
+
+
+
+
+
+    //validation category rules
+    private function validation_rules() {
+        return [
+            'category_name' => 'required|max:255',
+            'img' => 'required',
+        ];
+    }
+    
+    //validation category message
+    private function validation_message() {
+        return [
+            'category_name.required' => 'Il nome della categoria è obbligatorio',
+            'img.required' => 'Il link per l immagine è obbligatorio',
+        ];
+    }
+
 }

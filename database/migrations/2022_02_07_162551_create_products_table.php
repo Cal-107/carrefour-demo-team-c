@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->unsignedDecimal('weight', $precision = 8, $scale = 3);
             $table->unsignedDecimal('price_per_kg', $precision = 8, $scale = 3);
             $table->unsignedDecimal('price', $precision = 8, $scale = 3);
+            $table->string('image')->nullable();
             $table->string('slug')->unique();
             $table->timestamps();
         });

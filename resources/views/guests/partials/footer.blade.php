@@ -10,8 +10,13 @@
                     <div class="col-7 mt-5">
                         <h4><strong>Dal 4 al 18 febbraio scarica la app Carrefour e prova a vincere la tua spesa!</strong></h4>
                         <div class="img-app d-flex">
+<<<<<<< HEAD
                             <img class="mr-3" src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dwdf1e7a20/images/istituzionale/icon/GooglePlay_pulsante.png" alt="play store">
                             <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dwa28d5fe1/images/istituzionale/icon/AppleStore_pulsante.png" alt="app store">
+=======
+                            <img class="mr-3" src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-							IT/default/dwdf1e7a20/images/istituzionale/icon/GooglePlay_pulsante.png" alt="play store">
+                            <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-					IT/default/dwa28d5fe1/images/istituzionale/icon/AppleStore_pulsante.png" alt="app store">
+>>>>>>> 331411a27fe17379b17ffb252b191a38fd0800d7
                         </div>
                     </div>
                 </div>
@@ -74,25 +79,25 @@
                 <li>
                     <a href="">
                         <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dwa3e49b4c/financialservices.svg" alt="">
-                        <h4>carta carrefour findomestic</h4>
+                        <h6><strong>carta carrefour findomestic</strong></h6>
                     </a>
                 </li>
                 <li>
                     <a href="">
                         <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dw40efc902/ic_GiftCard_small_1.svg" alt="">
-                        <h4>gift card carrefour</h4>
+                        <h6><strong>gift card carrefour</strong></h6>
                     </a>
                 </li>
                 <li>
                     <a href="">
                         <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dwf20ee960/salute.svg" alt="">
-                        <h4>carrefour salute</h4>
+                        <h6><strong>carrefour salute</strong></h6>
                     </a>
                 </li>
                 <li>
                     <a href="">
                         <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dw77b055e6/distributore.svg" alt="">
-                        <h4>carrefour carburanti</h4>
+                        <h6><strong>carrefour carburanti</strong></h6>
                     </a>
                 </li>
             </ul>

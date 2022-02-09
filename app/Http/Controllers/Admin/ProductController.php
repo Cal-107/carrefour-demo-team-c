@@ -1,14 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use Illuminate\Support\Str;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Product;
+use Illuminate\Support\Str;
 
-use App\Category;
-
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +16,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $products = Product::all();
 
-        return view('admin.categories.index', compact('categories'));
+        return view('admin/products/index', compact('products'));
     }
 
     /**
@@ -29,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        return view('admin.products.create');
     }
 
     /**
@@ -40,33 +39,50 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate($this->validation_rules(), $this->validation_message());
-
         $data = $request->all();
-        
-        $new_category = new Category();
 
-        //creazione di slug univoco
-        $slug = Str::slug($data['category_name'], '-');
+        dump($data);
+
+        $new_product = new Product();
+
+
+        // SLUG
+
+        $slug = Str::slug($data['name'], '-');
         $count = 1;
-        $slug_base = $slug;
+        $base_slug = $slug;
 
-        while(Category::where('slug', $slug)->first()) {
-            $slug = $slug_base . '-' . $count;
-            $count++;
+        while(Product::where('slug', $slug)->first()) {
+            $slug = $base_slug . '-' . $count;
         }
 
-
-        //assegnamo lo slug univoco
         $data['slug'] = $slug;
 
-        //associamo i dati
-        $new_category->fill($data);
+        // CALCULATE PRICE
 
-        //salviamo i dati
-        $new_category->save();
+        
 
-        return redirect()->route('admin.categories.show', $new_category->slug);
+        
+
+        $data['price_per_kg'] = floatval($data['price_per_kg']);
+        $data['weight'] = floatval($data['weight']);
+
+        $price = $data['price_per_kg'] / $data['weight'];
+
+        $data['price'] = $price;
+ 
+        
+
+        $new_product->fill($data);
+
+        $new_product->save();
+
+        return redirect()->route('admin.home');
+
+        
+
+
+
     }
 
     /**
@@ -77,9 +93,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = Category::find($id);
-
-        return view('admin.categories.show', compact('category') );
+        //
     }
 
     /**
@@ -113,27 +127,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        
+        $product->delete();
+
+        return redirect()->route('admin.products.index')->with('deleted', $product->name);
     }
-
-
-
-
-
-    //validation category rules
-    private function validation_rules() {
-        return [
-            'category_name' => 'required|max:255',
-            'img' => 'required',
-        ];
-    }
-    
-    //validation category message
-    private function validation_message() {
-        return [
-            'category_name.required' => 'Il nome della categoria è obbligatorio',
-            'img.required' => 'Il link per l immagine è obbligatorio',
-        ];
-    }
-
 }

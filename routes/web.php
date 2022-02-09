@@ -20,8 +20,15 @@ Route::middleware('auth')
     ->name('admin.')
     ->prefix('admin')
     ->group(function() {
-        // admin hompage
+      
+        // admin homepage
         Route::get('/', 'HomeController@index')->name('home');
+      
+        // Product resource route
+        Route::resource('/products', 'ProductController');
+      
+         // Categories resource route
+        Route::resource('/categories', 'CategoryController');
     });
 
 

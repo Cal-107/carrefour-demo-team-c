@@ -39,6 +39,12 @@
                             @endif" 
                             href="{{ route('admin.products.index') }}">Our Products</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link 
+                            @if (Request::route()->getName() == 'admin.posts.create') active
+                            @endif" 
+                            href="{{ route('admin.products.create') }}">Create & Add Product</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

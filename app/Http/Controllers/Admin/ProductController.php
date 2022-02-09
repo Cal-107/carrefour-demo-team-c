@@ -64,7 +64,7 @@ class ProductController extends Controller
         $data['price_per_kg'] = floatval($data['price_per_kg']);
         $data['weight'] = floatval($data['weight']);
 
-        $price = $data['price_per_kg'] / $data['weight'];
+        $price = $data['price_per_kg'] * $data['weight'];
 
         $data['price'] = $price;
  

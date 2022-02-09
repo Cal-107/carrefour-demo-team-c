@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +12,26 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('guests.home');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')
+    ->namespace('Admin')
+    ->name('admin.')
+    ->prefix('admin')
+    ->group(function() {
+      
+        // admin homepage
+        Route::get('/', 'HomeController@index')->name('home');
+      
+        // Product resource route
+        Route::resource('/products', 'ProductController');
+      
+         // Categories resource route
+        Route::resource('/categories', 'CategoryController');
+    });
+
+
+Route::get('{any?}', function () {
+    return view('guests.home');
+})->where('any', '.*');

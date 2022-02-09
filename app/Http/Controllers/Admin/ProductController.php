@@ -45,7 +45,6 @@ class ProductController extends Controller
 
         $new_product = new Product();
 
-
         // SLUG
 
         $slug = Str::slug($data['name'], '-');
@@ -74,18 +73,11 @@ class ProductController extends Controller
 
         $data['price'] = $price;
  
-        
-
         $new_product->fill($data);
 
         $new_product->save();
 
         return redirect()->route('admin.products.index');
-
-        
-
-
-
     }
 
     /**

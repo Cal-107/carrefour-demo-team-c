@@ -4,19 +4,19 @@
     <div class="container">
         <h1 class="mb-5">Edit {{$category->category_name}}</h1>
 
-        <form action="{{ route('admin.categories.update', $category->id) }}">
+        <form action="{{ route('admin.categories.update', $category->id) }}" method="POST">
             @csrf
             @method('PATCH')
 
             {{--name_category--}}
             <div class="mb-3">
                 <label  class="form-label"
-                    for="name">Name</label>
+                    for="category_name">category name</label>
                 <input class="form-control"
-                    type="text" name="name" id="name" value="{{old('title', $category->category_name)}}">
+                    type="text" name="category_name" id="category_name" value="{{old('category_name', $category->category_name)}}">
                     {{--Error--}}
-                    @error('name')
-                        <div class="text-danger">{{$message}}</div>
+                    @error('category_name')
+                        <div class="text-danger">{{ $message }}</div>
                     @enderror
             </div>
 
@@ -33,7 +33,7 @@
             </div>
 
             <button class="btn btn-primary" type="submit">
-                Upadate post
+                Upadate Categories
             </button>
         </form>
     </div>

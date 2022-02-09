@@ -96,6 +96,10 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
 
+        if (! $category){
+            abort (404);
+        }
+
         return view('admin.categories.edit', compact('category'));
     }
 
@@ -114,7 +118,9 @@ class CategoryController extends Controller
         $data = $request->all();
 
         //aggiorniamo lo slug univoco
-        if ($data['category_name'] != $category->title) {
+        $category = Category::find($id);
+        if ($data['category_name'] != $category->category_name) {
+
             $slug = Str::slug($data['category_name'], '-');
             $count = 1;
             $slug_base = $slug;
@@ -132,7 +138,7 @@ class CategoryController extends Controller
         $category->update($data);
 
         //reindirizziamo
-        return redirect()->route('admin.categories.show', $category->id);
+        return redirect()->route('admin.categories.show', $category->slug);
     }
 
     /**

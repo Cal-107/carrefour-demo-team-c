@@ -50,14 +50,6 @@
                                 </form>
                             </td>
                             
-                            <td>CREATE</td>
-                            <td>
-                                <form action="{{route('admin.categories.destroy', $category->id)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <input type="submit" class="btn btn-danger" value="DELETE" >
-                                </form>
-                            </td>
                         </tr>
                     @endforeach
                 </tbody>

@@ -61,9 +61,6 @@ class ProductController extends Controller
         // CALCULATE PRICE
 
         
-
-        
-
         $data['price_per_kg'] = floatval($data['price_per_kg']);
         $data['weight'] = floatval($data['weight']);
 

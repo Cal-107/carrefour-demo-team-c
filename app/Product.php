@@ -13,6 +13,7 @@ class Product extends Model
         'weight', 
         'price_per_kg', 
         'price', 
-        'slug'
+        'slug',
+        'image',
     ];
 }

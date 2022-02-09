@@ -6,7 +6,7 @@
     <div class="container">
         <h1 class="mb-5">Categories Archives</h1>
 
-        {{--Aletr deleted--}}
+        {{--Alert deleted--}}
         @if (session('deleted'))
             <div class="alert alert-success">
                 <strong>{{ session('deleted') }}</strong>
@@ -47,6 +47,15 @@
                                     @csrf
                                     @method('DELETE')
                                     <input class="btn btn-danger" type="submit" value="Delete">
+                                </form>
+                            </td>
+                            
+                            <td>CREATE</td>
+                            <td>
+                                <form action="{{route('admin.categories.destroy', $category->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="submit" class="btn btn-danger" value="DELETE" >
                                 </form>
                             </td>
                         </tr>

@@ -60,14 +60,17 @@ class ProductController extends Controller
 
         // CALCULATE PRICE
 
-        
+        $data['price_per_kg'] = str_replace(',', '.', $data['price_per_kg']);
+        $data['weight'] = str_replace(',', '.', $data['weight']);
 
+        // dd($data['weight']);
         
-
         $data['price_per_kg'] = floatval($data['price_per_kg']);
         $data['weight'] = floatval($data['weight']);
 
-        $price = $data['price_per_kg'] / $data['weight'];
+        $price = $data['price_per_kg'] * $data['weight'];
+
+        // dd($price);
 
         $data['price'] = $price;
  
@@ -77,7 +80,7 @@ class ProductController extends Controller
 
         $new_product->save();
 
-        return redirect()->route('admin.home');
+        return redirect()->route('admin.products.index');
 
         
 
@@ -91,9 +94,14 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $product = Product::where('slug', $slug)->first();
+
+        if (! $product) {
+            abort(404);
+        }
+        return view('admin.products.show', compact('product'));
     }
 
     /**

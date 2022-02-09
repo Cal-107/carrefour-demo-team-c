@@ -13,6 +13,9 @@
             <label for="brand">Marca prodotto</label>
             <input type="text" id="brand" name="brand" class="form-control mb-3">
 
+            <label for="image">Url immagine</label>
+            <input type="text" id="image" name="image" class="form-control mb-3">
+
             <label for="description">Descrizione</label>
             <textarea name="description" id="description" cols="30" rows="10" class="form-control mb-3"></textarea>
 

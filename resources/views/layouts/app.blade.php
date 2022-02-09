@@ -41,9 +41,16 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link
-                            @if (Request::route()->getName() == 'admin.categories.index') active
-                            @endif"
-                             href="{{ route('admin.categories.index') }} ">Our Categories</a>
+                              @if (Request::route()->getName() == 'admin.categories.index') active
+                              @endif"
+                              href="{{ route('admin.categories.index') }} ">Our Categories
+                             </a>
+
+                            <a class="nav-link 
+                              @if (Request::route()->getName() == 'admin.posts.create') active
+                              @endif" 
+                              href="{{ route('admin.products.create') }}">Create & Add Product
+                            </a>
                         </li>
                     </ul>
 

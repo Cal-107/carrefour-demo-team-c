@@ -26,12 +26,7 @@
             <input type="text" id="weight" name="weight" class="form-control mb-3">
 
             <button type="submit" class="btn btn-primary">Crea</button>
-
-
-
-
-
-
+            
         </form>
     </div>
 @endsection

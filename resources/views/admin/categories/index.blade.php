@@ -49,7 +49,6 @@
                                     <input class="btn btn-danger" type="submit" value="Delete">
                                 </form>
                             </td>
-                            
                         </tr>
                     @endforeach
                 </tbody>

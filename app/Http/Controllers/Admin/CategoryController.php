@@ -75,11 +75,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $category = Category::find($id);
+        $category = Category::where('slug', $slug)->first();
+        
+        if(! $category){
+            abort(404);
+        }
 
-        return view('admin.categories.show', compact('category') );
+        return view('admin.categories.show', compact('category'));
     }
 
     /**
@@ -90,7 +94,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -140,6 +146,7 @@ class CategoryController extends Controller
         $category = Category::find($id);
 
         $category->delete();
+ 
         return redirect()->route('admin.categories.index')->with('deleted', $category->category_name);
     }
 

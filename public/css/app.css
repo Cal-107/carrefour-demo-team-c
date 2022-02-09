@@ -10031,9 +10031,18 @@ footer .service h2 {
 }
 footer .service .app {
   width: 100%;
-  height: 300px;
+  height: 235, 75px;
   background: linear-gradient(to bottom, #e0e9f4 0%, #c7dbf3 100%);
   border-radius: 20px;
+}
+footer .service .app img {
+  width: 268px;
+}
+footer .service .app h4 {
+  font-weight: 700;
+}
+footer .service .app .img-app img {
+  width: 152px;
 }
 footer .service .shipping ul {
   list-style-type: none;
@@ -10041,18 +10050,14 @@ footer .service .shipping ul {
   display: flex;
   flex-wrap: wrap;
 }
-footer .service .shipping ul li {
-  width: 100%;
-}
 footer .service .shipping ul li a {
   text-decoration: none;
 }
 footer .service .shipping ul li a .card {
   flex-direction: inherit;
-  padding: 20px;
+  padding: 25px 20px 25px 20px;
   border: 2px solid #d3e3f5;
   border-radius: 10px;
-  width: 50%;
 }
 footer .service .shipping ul li a .card img {
   width: 45px;
@@ -10060,5 +10065,40 @@ footer .service .shipping ul li a .card img {
 }
 footer .service .shipping ul li a .card h6, footer .service .shipping ul li a .card span {
   margin-bottom: 0;
+  color: #0e3368;
+}
+footer .asset-content {
+  padding: 30px 0 30px 0;
+  background: #e6f1fc;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+footer .asset-content .asset-container {
+  width: 1460px;
+}
+footer .asset-content .asset-container ul {
+  width: 100%;
+  list-style-type: none;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 0;
+  align-items: baseline;
+}
+footer .asset-content .asset-container ul li {
+  text-decoration: none;
+}
+footer .asset-content .asset-container ul li a {
+  display: flex;
+}
+footer .asset-content .asset-container ul li a img {
+  width: 30px;
+  margin-right: 15px;
+}
+footer .asset-content .asset-container ul li a h6 {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
   color: #0e3368;
 }

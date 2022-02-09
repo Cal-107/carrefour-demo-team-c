@@ -80,7 +80,7 @@ class ProductController extends Controller
 
         $new_product->save();
 
-        return redirect()->route('admin.prducts.index');
+        return redirect()->route('admin.products.index');
 
         
 

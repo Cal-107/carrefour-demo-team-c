@@ -1,4 +1,4 @@
-<?php
+git fetch --all<?php
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;

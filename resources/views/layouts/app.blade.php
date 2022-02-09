@@ -35,9 +35,15 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link 
-                            @if (Request::route()->getName() == 'admin.posts.index') active
+                            @if (Request::route()->getName() == 'admin.products.index') active
                             @endif" 
                             href="{{ route('admin.products.index') }}">Our Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link
+                            @if (Request::route()->getName() == 'admin.categories.index') active
+                            @endif"
+                             href="{{ route('admin.categories.index') }} ">Our Categories</a>
                         </li>
                     </ul>
 

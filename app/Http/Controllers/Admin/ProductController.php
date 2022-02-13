@@ -39,6 +39,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate($this->validation_rules(), $this->validation_messages());
         $data = $request->all();
 
         dump($data);
@@ -107,7 +109,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -136,4 +140,31 @@ class ProductController extends Controller
 
         return redirect()->route('admin.products.index')->with('deleted', $product->name);
     }
+
+    //VALIDATION
+
+    private function validation_rules() {
+        return [
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'brand' => 'required', 
+            'weight' => 'required',
+            'price_per_kg' => 'required',
+            'image' => 'nullable',
+
+
+            // 'category_id' => 'nullable|exists:categories,id',
+            // 'tags' => 'nullable|exists:tags,id'
+        ];
+    }
+    
+    private function validation_messages() {
+        return [
+            'required' => 'The :attribute is required',
+            'max' => 'Max :max characters allowed for the :attribute',
+            // 'category_id.exists' => 'Selected category does not exists',
+            // 'tags.exists' => 'Seleceted tag does not exists'
+        ];
+    }
 }
+

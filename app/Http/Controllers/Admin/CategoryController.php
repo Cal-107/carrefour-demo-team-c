@@ -75,11 +75,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $category = Category::find($id);
+        $category = Category::where('slug', $slug)->first();
+        
+        if(! $category){
+            abort(404);
+        }
 
-        return view('admin.categories.show', compact('category') );
+        return view('admin.categories.show', compact('category'));
     }
 
     /**
@@ -90,7 +94,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -102,7 +108,33 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //validazione dei dati
+        $request->validate($this->validation_rules(), $this->validation_message());
+
+        $data = $request->all();
+
+        $category = Category::find($id);
+
+        //aggiorniamo lo slug univoco
+        if ($data['category_name'] != $category->category_name) {
+            $slug = Str::slug($data['category_name'], '-');
+            $count = 1;
+            $slug_base = $slug;
+
+            while(Category::where('slug', $slug)->first()) {
+                $slug = $slug_base . '-' . $count;
+                $count++;
+            }
+            $data['slug'] = $slug;
+        } else {
+            $data['slug'] = $category->slug;
+        };
+
+        //aggiorniamo il postmark
+        $category->update($data);
+
+        //reindirizziamo
+        return redirect()->route('admin.categories.show', $category->slug);
     }
 
     /**
@@ -113,7 +145,11 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+
+        $category->delete();
+ 
+        return redirect()->route('admin.categories.index')->with('deleted', $category->category_name);
     }
 
 

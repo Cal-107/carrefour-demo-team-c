@@ -47,7 +47,6 @@ class ProductController extends Controller
 
         $new_product = new Product();
 
-
         // SLUG
 
         $slug = Str::slug($data['name'], '-');
@@ -76,18 +75,11 @@ class ProductController extends Controller
 
         $data['price'] = $price;
  
-        
-
         $new_product->fill($data);
 
         $new_product->save();
 
         return redirect()->route('admin.products.index');
-
-        
-
-
-
     }
 
     /**
@@ -96,9 +88,14 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $product = Product::where('slug', $slug)->first();
+
+        if (! $product) {
+            abort(404);
+        }
+        return view('admin.products.show', compact('product'));
     }
 
     /**

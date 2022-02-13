@@ -14,6 +14,7 @@
         
         <div class="btn-container">
             <a  class="btn btn-info" href="{{ route('admin.categories.index') }}">Back to archives</a>
+            <a class="btn btn-primary" href="{{ route('admin.categories.edit', $category->id)}}">EDIT</a>
         </div>
     </div>
 

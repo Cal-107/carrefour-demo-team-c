@@ -17,7 +17,7 @@ return [
         'description' => 'Formaggi',
         'weight' => '0.375',
         'price_per_kg' => '9.84',
-        'price' => '3,69',
+        'price' => '3.69',
         'image' => 'https://www.supermercato24.it/asset/smhd/5e346/a354a/bedf0/681494194964867968_img.jpg',
         'slug' => 'galbani-santa-lucia-tris-mozzarella-3-x-125-g'
     ],

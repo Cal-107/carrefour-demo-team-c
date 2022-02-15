@@ -2,8 +2,8 @@
 
 @section('content')
     <section class="container mt-5 d-flex justify-content-center">
-        <div class="card w-50">
-            <img src="/" class="card-img-top" alt="{{ $product->name }}">
+        <div class="card w-50 d-flex">
+            <img class="w-50 align-self-center" src="{{  $product->image }}" class="card-img-top" alt="{{ $product->name }}">
             <div class="card-body">
               <h1 class="card-title">{{ $product->name }}</h1>
               <h3>Brand: {{ $product->brand }} </h3>

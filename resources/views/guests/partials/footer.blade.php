@@ -217,7 +217,6 @@
                     </ul>
                 </div>
             </div>
-            <div class="contacts col-4"> hello</div>
         </div>
     </div>
     <div class="payment-methods d-flex justify-content-center py-3">

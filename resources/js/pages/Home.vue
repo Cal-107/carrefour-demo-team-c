@@ -63,7 +63,7 @@ export default {
             axios.get(`http://127.0.0.1:8000/api/products`).then((res) => {
                 console.log(res.data);
                 this.products = res.data;
-
+        
                 //  if(res.data.not_found) {
                 //      this.$router.push({ name: 'not-found'})
                 //  }else{

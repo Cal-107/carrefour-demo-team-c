@@ -11,7 +11,7 @@ class ProductController extends Controller
     //product archive
     public function index() {
         // senza impaginazione
-        $products = Product::all();
+        $products = Product::all()->with(['category']);
 
         // $products = Product::orderBy('id', 'desc')->paginate(3);
         // dump($products);

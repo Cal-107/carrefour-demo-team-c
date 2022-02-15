@@ -10,13 +10,15 @@
 </head>
 <body>
 
-    @include('guests.partials.header')
+    {{-- @include('guests.partials.header') --}}
 
-    <main>
+    {{-- <main>
         @yield('content')
-    </main>
+    </main> --}}
+    <div id="root"></div>
 
-    @include('guests.partials.footer')
+    {{-- @include('guests.partials.footer') --}}
 
+    <script src="{{ asset('js/front-office.js')}}"></script>
 </body>
 </html>

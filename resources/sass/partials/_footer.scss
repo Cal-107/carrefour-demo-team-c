@@ -3,8 +3,8 @@ footer{
     background: #f7f7f7;
 
     .service{
-        width: 1519px;
-
+        max-width: 1519px;
+        margin: 0 auto;
         h2{
             color: #34537f;
         }
@@ -135,8 +135,7 @@ footer{
     .link-contact{
         border-bottom: 1px solid #e8e8e8;
         .link-contact-container{
-            width: 1460px;
-
+            width: 95%;
             .links{
                 padding-left:0;
                 ul{

@@ -7,6 +7,13 @@
             <div class="card-body">
               <h1 class="card-title">{{ $product->name }}</h1>
               <h3>Brand: {{ $product->brand }} </h3>
+              
+              <h5>@if ($product->category) 
+                {{$product->category->category_name}} 
+                @else Uncategorized 
+                @endif
+              </h5>
+        
               <p class="card-text"><strong>Description: </strong> {{ $product->description }} </p>
               <div><strong>Weight: </strong> {{ $product->weight }} kg</div>
               <div><strong>Price per kg: </strong> {{ $product->price_per_kg }} €</div>

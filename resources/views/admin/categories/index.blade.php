@@ -31,12 +31,12 @@
                             <td>{{$category->category_name}}</td>
                             <td>
                                 <a class="btn btn-primary" 
-                                    href="{{ route('admin.categories.show', $category->slug) }}">Show
+                                    href="{{ route('admin.categories.show', $category->slug) }}">Show Category
                                 </a>
                             </td>
                             <td>
                                 <a class="btn btn-warning" 
-                                    href="{{ route('admin.categories.edit', $category->id) }}">Edit
+                                    href="{{ route('admin.categories.edit', $category->id) }}">Edit Category
                                 </a>
                             </td>
                             <td>
@@ -46,7 +46,7 @@
                                 >
                                     @csrf
                                     @method('DELETE')
-                                    <input class="btn btn-danger" type="submit" value="Delete">
+                                    <input class="btn btn-danger" type="submit" value="Delete Category">
                                 </form>
                             </td>
                         </tr>

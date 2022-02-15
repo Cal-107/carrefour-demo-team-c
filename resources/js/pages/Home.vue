@@ -1,4 +1,8 @@
 <template>
+  <div class="container-fluid mt-5 p-5">
+
+      <CategorySlider />
+
     <div class="mt-5 p-5">
         <h2>I NOSTRI PRODOTTI</h2>
 
@@ -42,12 +46,14 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
+import CategorySlider from '../components/CategorySlider.vue';
 
 export default {
-    name: "Home",
-    components: {},
-
+    name: 'Home',
+    components: {
+        CategorySlider,
+    },
     data() {
         return {
             products: null,

@@ -9,15 +9,9 @@
     <title>Document</title>
 </head>
 <body>
-
-    {{-- @include('guests.partials.header') --}}
-
-    {{-- <main>
-        @yield('content')
-    </main> --}}
     <div id="root"></div>
 
-    {{-- @include('guests.partials.footer') --}}
+    @include('guests.partials.footer')
 
     <script src="{{ asset('js/front-office.js')}}"></script>
 </body>

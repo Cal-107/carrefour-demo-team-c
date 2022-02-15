@@ -2,7 +2,7 @@
   <div>
       <Header />
 
-      <main>
+      <main class="container-fluid">
          <router-view></router-view>
       </main>
   </div>

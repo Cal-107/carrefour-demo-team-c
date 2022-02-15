@@ -1,5 +1,5 @@
 <footer>
-    <div class="service mt-4 p-4">
+    <div class="service pt-4">
         <h2 class="mb-4">Carrefour per te - I nostri servizi</h2>
         <div class="top-section d-flex mb-4">
             <div class="col-6 p-0 pr-2">
@@ -124,7 +124,7 @@
     </div>
     <div class="link-contact d-flex justify-content-center py-4">
         <div class="link-contact-container d-flex">
-            <div class="links col-8 d-flex">
+            <div class="links col-7 d-flex">
                 <div class="col-4">
                     <ul>
                         <li>
@@ -223,7 +223,7 @@
         <div class="content">
             <h6 class= "text-center">metodi di pagamento</h6>
             <div class="methods">
-                <ul class="d-flex justify-content-between">
+                <ul class="d-flex justify-content-evenly p-0">
                     <li>
                         <img class="Visa" src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dw28e62a2c/footer-payments/visa.svg" alt="Visa">
                     </li>

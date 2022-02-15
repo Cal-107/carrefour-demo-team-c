@@ -31,9 +31,7 @@
 
             <label for="image">Url immagine</label>
             <input type="text" id="image" name="image" class="form-control mb-3" value="{{ old('image', $product->image) }}">
-            @error('image')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
+            
 
             <label for="description">Descrizione</label>
             <textarea name="description" id="description" cols="30" rows="10" class="form-control mb-3"> {{ old('description', $product->description) }} </textarea>
@@ -53,7 +51,7 @@
                 <div class="text-danger">{{ $message }}</div>
             @enderror
 
-            <button type="submit" class="btn btn-primary">Crea</button>
+            <button type="submit" class="btn btn-primary">Salva modifiche</button>
             
         </form>
     </div>

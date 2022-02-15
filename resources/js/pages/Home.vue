@@ -1,5 +1,8 @@
 <template>
   <div class="container-fluid mt-5 p-5">
+
+      <CategorySlider />
+
         <h2> I NOSTRI PRODOTTI </h2>
 
         <ul class=" product-cont flex-wrap d-flex">
@@ -49,11 +52,14 @@
 
 <script>
 import axios from 'axios';
+import CategorySlider from '../components/CategorySlider.vue';
 
 
 export default {
     name: 'Home',
-    components: {},
+    components: {
+        CategorySlider,
+    },
 
     data() {
         return {

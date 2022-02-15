@@ -109,7 +109,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        // $product = Product::find($id);
+        $product = Product::find($id);
 
         $categories = Category::all();
 

@@ -1,9 +1,7 @@
 <template>
   <div>
       <Header />
-      <Banner />
-
-      <main class="container-fluid">
+      <main>
          <router-view></router-view>
       </main>
   </div>
@@ -13,13 +11,11 @@
 
 <script>
 import Header from '../components/Header';
-import Banner from '../components/Banner';
 
 export default {
      name: 'App',
      components: {
          Header,
-         Banner,
      },
 }
 </script>

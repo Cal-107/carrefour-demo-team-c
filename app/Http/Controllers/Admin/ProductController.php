@@ -191,9 +191,7 @@ class ProductController extends Controller
             'weight' => 'required',
             'price_per_kg' => 'required',
             'image' => 'nullable',
-
-
-            // 'category_id' => 'nullable|exists:categories,id',
+            'category_id' => 'nullable|exists:categories,id',
             // 'tags' => 'nullable|exists:tags,id'
         ];
     }
@@ -203,7 +201,6 @@ class ProductController extends Controller
             'required' => 'The :attribute is required',
             'max' => 'Max :max characters allowed for the :attribute',
             'category_id.exists' => 'Selected category does not exists',
-            
         ];
     }
 }

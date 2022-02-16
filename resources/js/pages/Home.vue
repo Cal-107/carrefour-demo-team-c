@@ -18,7 +18,12 @@
                         v-for="product in products"
                         :key="`product-${product.id}`"
                     >
-                        <a href="/">
+                        <router-link
+                            :to="{
+                                name: 'detail',
+                                params: { slug: product.slug },
+                            }"
+                        >
                             <div class="productCard">
                                 <!-- brand -->
                                 <h5 class="mt-2">{{ product.brand }}</h5>
@@ -47,14 +52,14 @@
 
                                 <!-- btn-carrello -->
                                 <div class="bottonContainer">
-                                    <button class="product-btn btn">
+                                    <button class="product-btn btn ms-3">
                                         <i
                                             class="fa-solid fa-cart-shopping"
                                         ></i>
                                     </button>
                                 </div>
                             </div>
-                        </a>
+                        </router-link>
                     </li>
                 </ul>
             </div>

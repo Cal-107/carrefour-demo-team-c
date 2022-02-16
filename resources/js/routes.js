@@ -20,7 +20,7 @@ const router = new VueRouter({
             component: Home,
         },
         {
-            path: '/detail',
+            path: '/products/:slug',
             name: 'detail',
             component: Detail,
         },

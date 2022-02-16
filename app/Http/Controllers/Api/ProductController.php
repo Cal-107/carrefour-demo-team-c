@@ -18,4 +18,14 @@ class ProductController extends Controller
 
         return response()->json($products);
     }
+    public function show($slug) {
+        // Take post by Slug
+        $product = Product::where('slug', $slug)->with(['category'])->first();
+
+        // if (! $product) {
+        //     $product['not_found'] = true;
+        // }
+
+        return response()->json($product);
+    }
 }

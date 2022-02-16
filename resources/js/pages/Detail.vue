@@ -5,14 +5,14 @@
             <div class="product-images">
                 <div class="alternative-images">
                     <img
-                        src="https://m.media-amazon.com/images/I/A1vuFgRv4xL._AC_SX522_.jpg"
-                        alt=""
+                        :src="product.image"
+                        :alt="product.name"
                     />
                 </div>
                 <div class="product-main-image">
                     <img
-                        src="https://m.media-amazon.com/images/I/A1vuFgRv4xL._AC_SX522_.jpg"
-                        alt=""
+                        :src="product.image"
+                        :alt="product.name"
                     />
                 </div>
             </div>
@@ -23,22 +23,24 @@
                     <div class="offer">
                         <p>Offerta</p>
                     </div>
-                    <div class="name">Nome Product</div>
-                    <div class="info-product">Info product</div>
-                    <div>category Product</div>
+                    <h2 class="name">{{ product.brand }}</h2>
+                    <h3 class="info-product">{{ product.name }}</h3>
+                    <h5 v-if="(product.category)">
+                        {{ product.category.category_name}}
+                    </h5>
                 </div>
 
                 <div class="price">
                     <div class="wrap-info-discount">
-                        <div class="discount-precentage">45%</div>
+                        <div class="discount-percentage">45%</div>
 
                         <div class="pricebook-valid-date">
                             Fino al giorno 20/05/2002
                         </div>
 
                         <div class="sales">
-                            <span class="unit-price">$8,64 al kg/960.0g</span>
-                            <span class="value discounted">$ 8,29</span>
+                            <span class="unit-price">€ {{ product.price_per_kg }} al kg/ {{ product.weight }} kg</span>
+                            <span class="value discounted">€ {{ product.price }}</span>
                         </div>
                     </div>
                     <div class="bottonContainer">
@@ -57,12 +59,12 @@
 import axios from "axios";
 
 export default {
-    name: "Home",
+    name: "Detail",
     components: {},
 
     data() {
         return {
-            products: null,
+            product: null,
         };
     },
 
@@ -73,16 +75,15 @@ export default {
     methods: {
         getProducts() {
             axios
-                .get(`http://127.0.0.1:8000/api/products`)
+                .get(`http://127.0.0.1:8000/api/products/${this.$route.params.slug}`)
                 .then((res) => {
-                    console.log(res.data);
-
-                    if (res.data.not_found) {
-                        this.$router.push({ name: "not-found" });
-                    } else {
-                        this.products = res.data.data;
-                        console.log(this.products);
-                    }
+                    // this.product = res.data
+                    // if (res.data.not_found) {
+                    //     this.$router.push({ name: "not-found" });
+                    // } else {
+                        this.product = res.data;
+                        console.log(`here ${this.product}`);
+                    // }
                 })
                 .catch((err) => log.error(err));
         },
@@ -97,7 +98,6 @@ export default {
     padding: 30px;
 
     .product-main {
-        width: 80%;
         margin-top: 0 auto;
         display: flex;
         justify-content: center;

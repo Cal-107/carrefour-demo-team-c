@@ -159,7 +159,7 @@ class CategoryController extends Controller
     //validation category rules
     private function validation_rules() {
         return [
-            'category_name' => 'required|max:255',
+            'category_name' => 'nullable|max:255',
             'img' => 'required',
         ];
     }

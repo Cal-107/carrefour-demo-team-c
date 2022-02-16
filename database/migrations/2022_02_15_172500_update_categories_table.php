@@ -14,7 +14,7 @@ class UpdateCategoriesTable extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->string('class', 20)->nullable()->after('img');
+            $table->string('class', 20)->nullable()->after('image');
         });
     }
 

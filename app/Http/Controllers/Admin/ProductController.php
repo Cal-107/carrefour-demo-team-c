@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
 use Illuminate\Support\Str;
+use App\Category;
 
 class ProductController extends Controller
 {
@@ -28,7 +29,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.products.create');
+
+        $categories = Category::all();
+        return view('admin.products.create', compact('categories'));
     }
 
     /**
@@ -108,7 +111,9 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
-        return view('admin.products.edit', compact('product'));
+        $categories = Category::all();
+
+        return view('admin.products.edit', compact('product', 'categories'));
     }
 
     /**
@@ -197,8 +202,8 @@ class ProductController extends Controller
         return [
             'required' => 'The :attribute is required',
             'max' => 'Max :max characters allowed for the :attribute',
-            // 'category_id.exists' => 'Selected category does not exists',
-            // 'tags.exists' => 'Seleceted tag does not exists'
+            'category_id.exists' => 'Selected category does not exists',
+            
         ];
     }
 }

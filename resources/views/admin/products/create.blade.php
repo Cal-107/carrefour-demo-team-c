@@ -50,6 +50,23 @@
                 <div class="text-danger">{{ $message }}</div>
             @enderror
 
+            <label for="category_id">Category</label>
+            <select class="form-control mb-3" name="category_id" id="category_id">
+
+                <option value="">No category</option>
+
+                @foreach ($categories as $category)
+                    <option value="{{$category->id}}"
+                        @if ($category->id == old('category_id')) selected @endif
+                        >
+                        {{$category->category_name}}
+                    </option>
+                @endforeach
+            </select>
+            @error('category_id')
+                <div class="text-danger">{{$message}}</div>
+            @enderror
+
             <button type="submit" class="btn btn-primary">Crea</button>
             
         </form>

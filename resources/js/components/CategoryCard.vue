@@ -1,17 +1,17 @@
 <template>
     <section class="card" :class="{red: (classStyle === 'red'), green: (classStyle === 'green')}">
         <div class="logo">
-            <img :src="image" alt="">
+            <img :src="image" alt="" />
         </div>
         <div class="title">
-            <h4>{{name}}</h4>
+            <h4>{{ name }}</h4>
         </div>
     </section>
 </template>
 
 <script>
 export default {
-    name: 'CategoryCards',
+    name: "CategoryCards",
     props: {
         name: String,
         image: String,
@@ -21,7 +21,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .card {
     height: 105px;
     width: 105px;
@@ -32,9 +31,9 @@ export default {
     justify-content: center;
     align-items: center;
     position: relative;
-    box-shadow: 0 8px 20px rgba(0,0,0,.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform .3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     .logo {
         height: 60%;
         width: 100%;
@@ -53,14 +52,12 @@ export default {
         align-items: center;
         justify-content: center;
         padding: 5px;
-       h4 {
-           font-size: 12px;
-           font-weight: 600;
-           color: #617185;
-           text-align: center;
-           
-           
-       }
+        h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: #617185;
+            text-align: center;
+        }
     }
 
     &:hover {
@@ -76,7 +73,6 @@ export default {
            }
        }
     }
-
 }
 
 .red {
@@ -136,4 +132,3 @@ export default {
 
 }
 </style>
-

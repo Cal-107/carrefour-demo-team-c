@@ -28,14 +28,11 @@
   </section>
 </template>
 
-
-
-
 <script>
-import CategoryCard from '../components/CategoryCard.vue';
-import axios from 'axios';
+import CategoryCard from "../components/CategoryCard.vue";
+import axios from "axios";
 export default {
-    name: 'CategorySlider',
+    name: "CategorySlider",
     components: {
         CategoryCard,
     },
@@ -48,18 +45,19 @@ export default {
         return {
             categories: null,
             activeSlider: 0,
-        }
+        };
     },
 
     methods: {
         getCategories() {
-            axios.get('http://localhost:8000/api/categories')
-            .then(res => {
-                this.categories = res.data;
-            })
-            .catch(err => {
-                console.log(err)
-            })
+            axios
+                .get("http://localhost:8000/api/categories")
+                .then((res) => {
+                    this.categories = res.data;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         },
 
         moveSlideRight() {
@@ -71,7 +69,6 @@ export default {
             }
             console.log(this.activeSlider);
             scrollBar.style.left = '-' + this.activeSlider * moviment + 'px';
-            
         },
 
         moveSlideLeft() {
@@ -79,7 +76,7 @@ export default {
             const scrollBar = document.querySelector('.category-slider-scroll');
             const moviment = 110;
             if (this.activeSlider < 0) {
-                this.activeSlider = 0
+                this.activeSlider = 0;
             }
                 console.log(this.activeSlider)
             if (this.activeSlider === 0) {
@@ -99,11 +96,11 @@ export default {
     height: 160px;
     width: 100%;
     background-color: #f8fafc;
-    position : relative;
+    position: relative;
     padding: 0px 40px;
     overflow: auto;
     margin-bottom: 50px;
-
+    overflow: hidden;
     .category-slider-container {
         height: 100%;
         width: 100%;
@@ -141,28 +138,30 @@ export default {
 
     .left {
         left: 0;
-        background-image: linear-gradient(to right, #f8fafc, #f8fafc, #f8fafc, #f8fafc, rgba(255, 255, 255, 0))
+        background-image: linear-gradient(
+            to right,
+            #f8fafc,
+            #f8fafc,
+            #f8fafc,
+            #f8fafc,
+            rgba(255, 255, 255, 0)
+        );
     }
 
     .right {
         right: 0;
-        background-image: linear-gradient(to left, #f8fafc, #f8fafc, #f8fafc, #f8fafc, rgba(255, 255, 255, 0))
+        background-image: linear-gradient(
+            to left,
+            #f8fafc,
+            #f8fafc,
+            #f8fafc,
+            #f8fafc,
+            rgba(255, 255, 255, 0)
+        );
     }
 
     .category-button.active button {
         background-color: #d1d1d1;
     }
-
-
-
-
-
- 
-
- 
 }
-
-
-
-
 </style>

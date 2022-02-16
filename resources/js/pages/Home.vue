@@ -1,59 +1,83 @@
 <template>
-  <div class="container-fluid mt-5 p-5">
+    <div>
+        <CategorySlider />
 
-      <CategorySlider />
+        <section class="delivery">
+            <span
+                >Imposta <strong>metodo</strong> e <strong>indirizzo</strong> di
+                consegna</span
+            >
+        </section>
+        <div class="contrinaer-fluid">
+            <Banner />
+            <div class="mt-5 p-5">
+                <h2>I NOSTRI PRODOTTI</h2>
 
-    <div class="mt-5 p-5">
-        <h2>I NOSTRI PRODOTTI</h2>
+                <ul class="product-cont flex-wrap d-flex">
+                    <li
+                        v-for="product in products"
+                        :key="`product-${product.id}`"
+                    >
+                        <router-link
+                            :to="{
+                                name: 'detail',
+                                params: { slug: product.slug },
+                            }"
+                        >
+                            <div class="productCard">
+                                <!-- brand -->
+                                <h5 class="mt-2">{{ product.brand }}</h5>
 
-        <ul class="product-cont flex-wrap d-flex">
-            <li v-for="product in products" :key="`product-${product.id}`">
-                <a href="/">
-                    <div class="productCard">
-                        <!-- brand -->
-                        <h5 class="mt-2">{{ product.brand }}</h5>
+                                <!-- name -->
+                                <div class="mt-2">{{ product.name }}</div>
 
-                        <!-- name -->
-                        <div class="mt-2">{{ product.name }}</div>
+                                <!-- img -->
+                                <figure class="product-image">
+                                    <img
+                                        :src="product.image"
+                                        :alt="product.name"
+                                    />
+                                </figure>
 
-                        <!-- img -->
-                        <figure class="product-image">
-                            <img :src="product.image" :alt="product.name" />
-                        </figure>
+                                <!-- price for kg/weight -->
+                                <div class="productKg">
+                                    € {{ product.price_per_kg }} al kg/{{
+                                        product.weight
+                                    }}
+                                    kg
+                                </div>
 
-                        <!-- price for kg/weight -->
-                        <div class="productKg">
-                            € {{ product.price_per_kg }} al kg/{{
-                                product.weight
-                            }}
-                            kg
-                        </div>
+                                <!-- price -->
+                                <div class="price">€ {{ product.price }}</div>
 
-                        <!-- price -->
-                        <div class="price">€ {{ product.price }}</div>
-
-                        <!-- btn-carrello -->
-                        <div class="bottonContainer">
-                            <button class="product-btn btn">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
-                        </div>
-                    </div>
-                </a>
-            </li>
-        </ul>
+                                <!-- btn-carrello -->
+                                <div class="bottonContainer">
+                                    <button class="product-btn btn ms-3">
+                                        <i
+                                            class="fa-solid fa-cart-shopping"
+                                        ></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </router-link>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
     </div>
 </template>
 
 <script>
-import axios from 'axios';
-import CategorySlider from '../components/CategorySlider.vue';
+import axios from "axios";
+import CategorySlider from "../components/CategorySlider.vue";
+import Banner from "../components/Banner";
 
 export default {
-    name: 'Home',
+    name: "Home",
     components: {
         CategorySlider,
+        Banner,
     },
     data() {
         return {
@@ -70,7 +94,7 @@ export default {
             axios.get(`http://127.0.0.1:8000/api/products`).then((res) => {
                 console.log(res.data);
                 this.products = res.data;
-        
+
                 //  if(res.data.not_found) {
                 //      this.$router.push({ name: 'not-found'})
                 //  }else{
@@ -153,6 +177,25 @@ h5 {
                 background-color: #0e3368;
             }
         }
+    }
+}
+
+.delivery {
+    background-color: #eef5fb;
+    padding: 0.5rem;
+    color: #1b3d79;
+    .toggler {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+        position: absolute;
+        box-shadow: 0 0 0 #0970e6;
+        left: 17px;
+        animation: pulse 4s infinite;
     }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <section class="card">
+    <section class="card" :class="{red: (classStyle === 'red'), green: (classStyle === 'green')}">
         <div class="logo">
             <img :src="image" alt="" />
         </div>
@@ -15,8 +15,9 @@ export default {
     props: {
         name: String,
         image: String,
-    },
-};
+        classStyle: String,
+    }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -24,7 +25,7 @@ export default {
     height: 105px;
     width: 105px;
     border-radius: 10px;
-    margin: 0px 10px;
+    margin: 0px 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,9 +61,74 @@ export default {
     }
 
     &:hover {
-        transform: translateY(-10px);
+       transform: translateY(-10px);
+       .logo {
+           img {
+               filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(200deg) brightness(83%) contrast(119%);
+           }
+       }
+       .title {
+           h4 {
+               color: #0970e6;
+           }
+       }
     }
 }
 
-/* #7C7D31 */
+.red {
+    background-color: #981f2d;
+    .logo {
+        img {
+            height: 150%;
+            height: 150%;
+            margin-top: 35px;
+        }
+    }
+        .title {
+            h4 {
+                color: white;
+            }
+        }
+    &:hover {
+        .logo {
+            img {
+                filter: none
+            }
+        }
+        .title {
+            h4 {
+                color: white;
+            }
+        }
+    }
+}
+
+.green {
+    background-color: #7c7d31;
+    .logo {
+        img {
+            height: 150%;
+            height: 150%;
+            margin-top: 35px;
+        }
+    }
+    .title {
+        h4 {
+            color: white;
+        }
+    }
+       &:hover {
+        .logo {
+            img {
+                filter: none
+            }
+        }
+        .title {
+            h4 {
+                color: white;
+            }
+        }
+    }
+
+}
 </style>

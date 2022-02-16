@@ -1,26 +1,31 @@
 <template>
-    <section class="category-slider">
-        <div class="category-slider-container">
-            <div class="category-slider-scroll">
-                <CategoryCard
-                    v-for="category in categories"
-                    :key="`category${category.id}`"
-                    :name="category.category_name"
-                    :image="category.img"
-                />
-            </div>
-        </div>
-        <div class="category-button left active">
-            <button @click="moveSlideRight()">
-                <i class="fa-solid fa-angle-left"></i>
-            </button>
-        </div>
-        <div class="category-button right">
-            <button @click="moveSlideLeft()">
-                <i class="fa-solid fa-angle-right"></i>
-            </button>
-        </div>
-    </section>
+  <section class="category-slider">
+      <div class="category-slider-container">
+          <div class="category-slider-scroll">
+              <CategoryCard 
+              v-for="category in categories" 
+              :key="`category${category.id}`"
+              :name="category.category_name"
+              :image="category.img"
+              :classStyle="category.class"
+              />
+              
+              
+
+
+
+
+          </div>
+      </div>
+    <div class="category-button left" :class="{active: activeSlider === 0}">
+        <button @click="moveSlideLeft()"><i class="fa-solid fa-angle-left"></i></button>
+    </div>
+    <div class="category-button right" :class="{active: activeSlider === 13}">
+        <button @click="moveSlideRight()"><i class="fa-solid fa-angle-right"></i></button>
+    </div>
+
+
+  </section>
 </template>
 
 <script>
@@ -57,21 +62,33 @@ export default {
 
         moveSlideRight() {
             this.activeSlider++;
-            if (this.activeSlider > 12) {
-                this.activeSlider = 12;
+            const scrollBar = document.querySelector('.category-slider-scroll');
+            const moviment = 110;
+            if (this.activeSlider > 13) {
+                this.activeSlider = 13
             }
             console.log(this.activeSlider);
+            scrollBar.style.left = '-' + this.activeSlider * moviment + 'px';
         },
 
         moveSlideLeft() {
             this.activeSlider--;
+            const scrollBar = document.querySelector('.category-slider-scroll');
+            const moviment = 110;
             if (this.activeSlider < 0) {
                 this.activeSlider = 0;
             }
-            console.log(this.activeSlider);
-        },
-    },
-};
+                console.log(this.activeSlider)
+            if (this.activeSlider === 0) {
+                scrollBar.style.left = '20px';
+            } else {
+                scrollBar.style.left = '-' + this.activeSlider * moviment + 'px';
+            }
+            
+        }
+    }
+
+}
 </script>
 
 <style lang="scss" scoped>
@@ -82,16 +99,21 @@ export default {
     position: relative;
     padding: 0px 40px;
     overflow: auto;
+    margin-bottom: 50px;
     overflow: hidden;
     .category-slider-container {
         height: 100%;
         width: 100%;
+        overflow: hidden;
         .category-slider-scroll {
             height: 100%;
-            width: calc(120px * 27);
+            width: calc(120px * 30);
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            position: relative;
+            left:20px;
+            transition: all 0.4s ease;
         }
     }
 
@@ -110,6 +132,7 @@ export default {
             color: white;
             border: none;
             border-radius: 100%;
+            transition: 0.5s ease;
         }
     }
 

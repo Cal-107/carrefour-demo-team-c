@@ -217,6 +217,65 @@
                     </ul>
                 </div>
             </div>
+            <div class="contacts col-5 d-flex justify-content-end">
+                <div class="col-8">
+                    <ul>
+                        <li class="w-100">
+                            <a href="#">
+                                <div class="card call d-flex align-items-center text-center w-100">
+                                    <div class="image col-6">
+                                        <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dwd3d279b3/call-us.png" alt="">
+                                    </div>
+                                    <div class="text col-6">
+                                        <h5 class="title">CHIAMACI</h5>
+                                        <P>al numero verde</P>
+                                        <h5 class="number">800 650 650</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="w-50 pr-1">
+                            <a href="#">
+                                <div class="card small text-center">
+                                    <div class="image-small">
+                                        <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dw680dbb0b/point-of-service.png" alt="">
+                                    </div>
+                                    <div class="text">
+                                        <p>TROVA UN</p>
+                                        <SPAN>PUNTO VENDITA</SPAN>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="w-50 pl-1">
+                            <a href="#">
+                                <div class="card small text-center">
+                                    <div class="image-small">
+                                        <img src="https://www.carrefour.it/on/demandware.static/-/Library-Sites-carrefour-library-IT/default/dw73041029/contact-service.png" alt="">
+                                    </div>
+                                    <div class="text">
+                                        <p>CONTATTA IL</p>
+                                        <SPAN>SERVIZIO CLIENTI</SPAN>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="w-50 pr-1">
+                            <a href="#">
+                                <div class="card small text-center">
+                                    <div class="image-small">
+                                        <img src="https://cdn.vivocha.com/assets/carrefour/widgets/vvc-button-carrefour-footer/assets/images/chat.svg/c66b695" alt="">
+                                    </div>
+                                    <div class="text">
+                                        <p>CHATTA CON UN</p>
+                                        <SPAN>OPERATORE</SPAN>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <div class="payment-methods d-flex justify-content-center py-3">
@@ -239,5 +298,8 @@
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="p-iva py-3">
+        <span>© 2022 Carrefour.it – P.IVA N. 12683790153</span>
     </div>
 </footer>
